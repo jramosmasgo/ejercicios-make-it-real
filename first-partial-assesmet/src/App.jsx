@@ -1,7 +1,7 @@
 import { defaultTheme } from './utils/theme';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import Header from './layout/Header';
-import { ProductDetail } from './pages/ProductDetail';
+import AppRouter from './routers/AppRouter';
+import React from 'react';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -13,15 +13,14 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto Condensed', sans-serif;
   }
-`
+`;
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={defaultTheme} >
-        <Header />
-        < ProductDetail />
+      <ThemeProvider theme={defaultTheme}>
+        <AppRouter />
       </ThemeProvider>
     </>
   );
